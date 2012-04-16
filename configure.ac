@@ -92,12 +92,6 @@ if test -z "$user_redefine_cc" ; then
 fi
 
 
-dnl Configs for Windows DLLs
-case $host in
-  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2*)
-     MPC_WINDOWS
-esac
-
 
 dnl Finally set up LibTool
 AC_PROG_LIBTOOL
@@ -154,6 +148,12 @@ error
          AC_MSG_RESULT(no)
          AC_MSG_ERROR([MPFR version >= 2.3.1 required])
          ])
+
+dnl Configs for Windows DLLs
+case $host in
+  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2*)
+     MPC_WINDOWS
+esac
 
 # Checks for header files.
 AC_HEADER_STDC

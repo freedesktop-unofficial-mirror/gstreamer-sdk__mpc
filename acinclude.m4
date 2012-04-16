@@ -197,6 +197,7 @@ AC_DEFUN([MPC_WINDOWS], [
    AC_MSG_CHECKING(for DLL/static GMP)
    if test "$enable_shared" = yes; then
      LDFLAGS="$LDFLAGS -no-undefined"
+     AC_SUBST(LDFLAGS)
      AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
 #include "gmp.h"
 #if !__GMP_LIBGMP_DLL
